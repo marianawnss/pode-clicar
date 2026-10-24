@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Pode Clicar? — escudo com cursor">
+  <defs>
+    <linearGradient id="pcg" x1="8" y1="4" x2="56" y2="62" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2c5be0"/>
+      <stop offset="1" stop-color="#7a3fe0"/>
+    </linearGradient>
+  </defs>
+  <path d="M32 3 55 11.5V30c0 14.5-10.2 25.2-23 31C19.2 55.2 9 44.5 9 30V11.5z" fill="url(#pcg)"/>
+  <path d="M32 7.5 51 14v16c0 12.2-8.4 21.6-19 26.8C21.4 51.6 13 42.2 13 30V14z" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="1.5"/>
+  <path d="M23.5 20.5v22.2l5.6-5.4 4.4 9.9 4.7-2.1-4.3-9.7 7.9-.3z" fill="#fff" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/>
+</svg>

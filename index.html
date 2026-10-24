@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Pode Clicar? Jogo educativo para aprender a reconhecer golpes digitais e notícias falsas. Projeto de extensão universitária em Ciências da Computação.">
+  <meta name="theme-color" content="#4c2a9e">
+  <title>Pode Clicar? — Pense antes de clicar</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-screen="home">
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <button type="button" class="brand" data-action="brand" aria-label="Pode Clicar? Voltar para a página inicial">
+        <img src="assets/logo.svg" alt="" width="40" height="40">
+        <span class="brand__name">Pode Clicar?</span>
+      </button>
+
+      <nav class="site-nav" aria-label="Principal">
+        <button type="button" class="btn btn--ghost btn--small" data-go="library">
+          <span data-icon="book"></span><span>Dicas</span>
+        </button>
+        <button type="button" class="btn btn--ghost btn--small" id="btn-settings" aria-expanded="false" aria-controls="settings-panel">
+          <span data-icon="sliders"></span><span>Ajustes</span>
+        </button>
+      </nav>
+    </div>
+
+    <div class="wrap">
+      <div id="settings-panel" class="settings" hidden>
+        <h2 class="settings__title">Ajustes de leitura</h2>
+
+        <div class="settings__row">
+          <span id="fs-label" class="settings__label">Tamanho da letra</span>
+          <div class="fs-controls" role="group" aria-labelledby="fs-label">
+            <button type="button" class="btn btn--soft btn--small" data-action="font-down" aria-label="Diminuir letra">A−</button>
+            <output id="fs-output" class="fs-output" aria-live="polite">1 de 4</output>
+            <button type="button" class="btn btn--soft btn--small" data-action="font-up" aria-label="Aumentar letra">A+</button>
+          </div>
+        </div>
+
+        <label class="switch">
+          <input type="checkbox" id="opt-motion">
+          <span class="switch__box" aria-hidden="true"></span>
+          <span>Reduzir animações</span>
+        </label>
+
+        <label class="switch">
+          <input type="checkbox" id="opt-contrast">
+          <span class="switch__box" aria-hidden="true"></span>
+          <span>Alto contraste</span>
+        </label>
+
+        <p class="settings__note">
+          Estas preferências ficam salvas apenas neste aparelho, no próprio navegador.
+          Suas respostas do jogo não são guardadas em lugar nenhum.
+        </p>
+        <button type="button" class="btn btn--soft btn--small" data-action="reset-prefs">Voltar ao padrão</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="wrap" tabindex="-1">
+
+    <!-- ===================== TELA 1: INÍCIO ===================== -->
+    <section id="screen-home" data-screen="home" aria-labelledby="home-title">
+      <div class="hero">
+        <div class="hero__text">
+          <p class="project-tag"><span data-icon="shield"></span> Iniciativa educativa de extensão universitária em Ciências da Computação</p>
+          <h1 id="home-title" tabindex="-1">Pode Clicar?</h1>
+          <p class="hero__slogan">Pense antes de clicar. Sua segurança começa com uma escolha.</p>
+          <p class="lead">
+            Um jogo curto com situações do dia a dia: mensagens, ligações, notícias e pedidos de dinheiro.
+            Você escolhe o que faria e descobre, na hora, quais sinais merecem atenção.
+            Tudo é simulação: nada aqui é real e nenhum dado seu é pedido.
+          </p>
+          <div class="actions">
+            <button type="button" class="btn btn--primary btn--big" data-action="start-all">
+              Começar o desafio <span data-icon="arrow-right"></span>
+            </button>
+            <button type="button" class="btn btn--soft btn--big" data-go="how">Como funciona</button>
+            <button type="button" class="btn btn--soft btn--big" data-go="library">Dicas de segurança</button>
+          </div>
+        </div>
+
+        <!-- Ilustração decorativa: uma mensagem suspeita e a pergunta do jogo -->
+        <div class="hero__art" aria-hidden="true">
+          <div class="mock">
+            <div class="mock__head">
+              <span class="avatar"><span data-icon="user"></span></span>
+              <span><strong>Número desconhecido</strong><small>agora</small></span>
+            </div>
+            <div class="bubble bubble--them">Parabéns! Você ganhou um prêmio. Resgate agora:
+              <span class="fake-link mock__link">premio-exemplo.invalid</span>
+            </div>
+            <div class="mock__ask">
+              <span data-icon="help-circle"></span> Pode clicar?
+            </div>
+            <span class="mock__tap" data-icon="pointer"></span>
+          </div>
+        </div>
+      </div>
+
+      <ul class="facts" aria-label="Sobre o jogo">
+        <li><strong id="fact-count">14</strong> situações</li>
+        <li><strong>5</strong> temas</li>
+        <li><strong>Sem cadastro</strong> e sem pedir dados</li>
+        <li><strong>Em português</strong>, para todas as idades</li>
+      </ul>
+    </section>
+
+    <!-- ===================== TELA 2: COMO FUNCIONA ===================== -->
+    <section id="screen-how" data-screen="how" aria-labelledby="how-title" hidden>
+      <button type="button" class="back" data-go="home"><span data-icon="arrow-left"></span> Voltar</button>
+      <h1 id="how-title" tabindex="-1">Como funciona</h1>
+      <p class="lead">Em poucos passos, você treina o olhar para reconhecer sinais de golpe.</p>
+
+      <ol class="steps">
+        <li><strong>Veja a situação.</strong> Pode ser uma mensagem, uma ligação, uma publicação ou uma tela de celular.</li>
+        <li><strong>Escolha o que faria.</strong> Toque em uma alternativa e confirme.</li>
+        <li><strong>Entenda o porquê.</strong> O jogo explica os sinais de alerta e mostra a atitude mais segura.</li>
+        <li><strong>Veja seu resultado.</strong> No final, você recebe sugestões de assuntos para revisar.</li>
+      </ol>
+
+      <div class="notice">
+        <h2>Antes de começar</h2>
+        <ul class="ticks">
+          <li>Nada do que você escolher aqui tem consequências reais.</li>
+          <li>O objetivo é aprender, não julgar. Errar faz parte do aprendizado.</li>
+          <li>O jogo não pede senha, dado bancário nem qualquer dado pessoal.</li>
+          <li>As respostas não são enviadas nem guardadas. Se você fechar a página, elas somem.</li>
+          <li>Só as suas preferências de leitura (tamanho da letra, animações e contraste) ficam salvas neste aparelho. Você pode apagá-las em "Ajustes".</li>
+        </ul>
+      </div>
+
+      <div class="actions">
+        <button type="button" class="btn btn--primary btn--big" data-action="start-all">
+          Começar o desafio <span data-icon="arrow-right"></span>
+        </button>
+        <button type="button" class="btn btn--soft btn--big" data-go="categories">Escolher um tema</button>
+      </div>
+    </section>
+
+    <!-- ===================== TELA 3: CATEGORIAS ===================== -->
+    <section id="screen-categories" data-screen="categories" aria-labelledby="cat-title" hidden>
+      <button type="button" class="back" data-go="home"><span data-icon="arrow-left"></span> Voltar</button>
+      <h1 id="cat-title" tabindex="-1">Escolha um tema</h1>
+      <p class="lead">Jogue um tema de cada vez ou faça o desafio completo, com todos os temas misturados.</p>
+
+      <div class="actions">
+        <button type="button" class="btn btn--primary btn--big" data-action="start-all">
+          Desafio completo <span data-icon="arrow-right"></span>
+        </button>
+      </div>
+
+      <ul id="category-list" class="cards" aria-label="Temas disponíveis"></ul>
+    </section>
+
+    <!-- ===================== TELA 4 e 5: SIMULAÇÃO E FEEDBACK ===================== -->
+    <section id="screen-play" data-screen="play" aria-labelledby="play-title" hidden>
+      <div class="play-top">
+        <button type="button" class="back" data-action="exit-game"><span data-icon="arrow-left"></span> Sair do jogo</button>
+        <p id="play-meta" class="play-meta"></p>
+      </div>
+
+      <div id="progress" class="progress" role="progressbar" aria-label="Progresso do desafio" aria-valuemin="0" aria-valuemax="1" aria-valuenow="0">
+        <span id="progress-fill" class="progress__fill"></span>
+      </div>
+      <p id="progress-text" class="progress__text"></p>
+
+      <h1 id="play-title" tabindex="-1"></h1>
+      <p id="play-context" class="lead"></p>
+
+      <div class="play-grid">
+        <div id="play-scene" class="play-scene"></div>
+
+        <div class="play-side">
+          <fieldset id="play-options" class="options">
+            <legend id="play-question">O que você faria nesta situação?</legend>
+            <div id="options-list" class="options__list"></div>
+          </fieldset>
+
+          <p id="play-error" class="error" role="alert" hidden></p>
+
+          <div id="play-actions" class="actions">
+            <button type="button" id="btn-confirm" class="btn btn--primary btn--big" data-action="confirm">
+              Confirmar escolha
+            </button>
+          </div>
+
+          <div id="play-feedback" class="feedback" hidden></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TELA 6: RESULTADO ===================== -->
+    <section id="screen-results" data-screen="results" aria-labelledby="results-title" hidden>
+      <h1 id="results-title" tabindex="-1">Seu resultado</h1>
+      <div id="results-content"></div>
+    </section>
+
+    <!-- ===================== REVISÃO DAS RESPOSTAS ===================== -->
+    <section id="screen-review" data-screen="review" aria-labelledby="review-title" hidden>
+      <button type="button" class="back" data-action="back-from-review"><span data-icon="arrow-left"></span> Voltar ao resultado</button>
+      <h1 id="review-title" tabindex="-1">Revisar minhas respostas</h1>
+      <div id="review-content"></div>
+    </section>
+
+    <!-- ===================== TELA 7: BIBLIOTECA ===================== -->
+    <section id="screen-library" data-screen="library" aria-labelledby="library-title" hidden>
+      <button type="button" class="back" data-action="back-from-library"><span data-icon="arrow-left"></span> <span id="library-back-label">Voltar</span></button>
+      <h1 id="library-title" tabindex="-1">Dicas de segurança digital</h1>
+      <p class="lead">Consulte quando quiser. Toque em um assunto para abrir.</p>
+
+      <div class="rule" role="note">
+        <p class="rule__title">A regra de ouro</p>
+        <ol class="rule__steps">
+          <li><strong>Pare.</strong> Não toque, não responda, não pague.</li>
+          <li><strong>Pense.</strong> Tem urgência? Pede dados, código ou dinheiro? Eu esperava isso?</li>
+          <li><strong>Confirme.</strong> Por outro canal: ligue para um número que você já conhece ou abra o aplicativo oficial.</li>
+        </ol>
+      </div>
+
+      <div id="library-list" class="tips"></div>
+
+      <div class="actions">
+        <button type="button" class="btn btn--primary btn--big" data-action="start-all">
+          Começar o desafio <span data-icon="arrow-right"></span>
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>
+        <strong>Pode Clicar?</strong> é um material educativo de extensão universitária em Ciências da Computação.
+        Todas as situações, nomes, empresas e endereços são fictícios.
+      </p>
+      <p>
+        A pontuação serve para incentivar o aprendizado e não garante que alguém esteja protegido contra golpes.
+        Este jogo não coleta, não envia e não guarda dados pessoais.
+      </p>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
