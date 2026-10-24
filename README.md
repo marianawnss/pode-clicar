@@ -310,18 +310,14 @@ Foram executados testes automatizados em um navegador Chromium sem interface (mo
 
 ## Aplicação com a comunidade (a preencher)
 
-> Esta seção será preenchida **somente depois** da aplicação real da atividade.
-
-- Data e local da aplicação: _a preencher_
-- Número de participantes: _a preencher_
-- Observações da equipe: _a preencher_
+- Data da aplicação: 24/10/2026 
 - Resultados e aprendizados: _a preencher_
 
 Nenhum resultado de uso por pessoas reais foi realizado ou registrado neste repositório até o momento.
 
 ## Créditos e licenças
 
-- Código, textos, logotipo e estilos: desenvolvidos para este projeto de extensão. *(Defina aqui o nome da autora, da instituição e a licença que desejar, por exemplo MIT ou Creative Commons.)*
+Código, textos, logotipo e identidade visual desenvolvidos para o projeto de extensão do Gran Centro Universitário. Autoria: Mariana Rodrigues.
 - Ícones: desenhos simples em SVG de traço, embutidos em `script.js`. Vários seguem o estilo do conjunto [Feather Icons](https://feathericons.com) (licença MIT).
 - Fontes: não há arquivos de fonte. O jogo usa as fontes do próprio aparelho (Atkinson Hyperlegible, se instalada; senão Segoe UI, Roboto, Helvetica Neue ou Arial).
 - Nenhuma marca real é reproduzida. Todos os nomes de empresas, bancos, pessoas e redes sociais nas simulações são fictícios.
